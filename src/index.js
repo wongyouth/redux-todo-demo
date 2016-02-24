@@ -6,7 +6,9 @@ import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import reducers from './reducers'
 
-let store = createStore(reducers);
+// let store = createStore(reducers);
+let store = createStore(reducers,
+  window.devToolsExtension ? window.devToolsExtension() : undefined);
 
 // Render the main component into the dom
 ReactDOM.render(

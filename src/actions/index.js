@@ -15,9 +15,24 @@ export const toggleTodo = (id) => {
   };
 };
 
+export const editingTodo = (id) => {
+  return {
+    type: 'EDITING_TODO',
+    id: id
+  };
+};
+
 export const setVisibility = (filter) => {
   return {
     type: 'SET_VISIBILITY',
     filter: filter
   };
 };
+
+export const changeTodoText = (id, text) => {
+  return {
+    type: 'CHANGE_TODO_TEXT',
+    id: id,
+    text: text
+  }
+}
