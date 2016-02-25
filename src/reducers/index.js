@@ -6,7 +6,8 @@ let todo = (state, action) => {
       return {
         id: action.id,
         text: action.text,
-        completed: false
+        completed: false,
+        editing: false
       };
 
     case 'TOGGLE_TODO':

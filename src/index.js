@@ -1,6 +1,6 @@
 import 'core-js/fn/object/assign';
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {render} from 'react-dom';
 import App from './components/App';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
@@ -11,7 +11,7 @@ let store = createStore(reducers,
   window.devToolsExtension ? window.devToolsExtension() : undefined);
 
 // Render the main component into the dom
-ReactDOM.render(
+render(
   <Provider store={store}>
     <App />
   </Provider>,

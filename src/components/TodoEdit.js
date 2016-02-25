@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 
 const TodoEdit = ({text, changeText}) => {
   return (
@@ -9,5 +9,10 @@ const TodoEdit = ({text, changeText}) => {
     </div>
   );
 };
+
+TodoEdit.propTypes = {
+  text: PropTypes.string.isRequired,
+  changeText: PropTypes.func.isRequired
+}
 
 export default TodoEdit;

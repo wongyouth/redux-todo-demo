@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 
-export default ({completed, text, onClick, onDoubleClick}) => {
+const Todo = ({completed, text, onClick, onDoubleClick}) => {
   return (
     <li
       onClick={onClick}
@@ -13,3 +13,12 @@ export default ({completed, text, onClick, onDoubleClick}) => {
     </li>
   );
 };
+
+Todo.propTypes = {
+  completed: PropTypes.bool.isRequired,
+  text: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  onDoubleClick: PropTypes.func.isRequired
+}
+
+export default Todo;

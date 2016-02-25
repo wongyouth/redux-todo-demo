@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 
-export default ({active, children, onClick}) => {
+const Link = ({active, children, onClick}) => {
   if (active) {
     return (
       <span>
@@ -15,3 +15,11 @@ export default ({active, children, onClick}) => {
     </a>
   );
 };
+
+Link.propTypes = {
+  active: PropTypes.bool.isRequired,
+  children: PropTypes.node.isRequired,
+  onClick: PropTypes.func.isRequired
+}
+
+export default Link;
