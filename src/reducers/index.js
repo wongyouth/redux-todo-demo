@@ -18,11 +18,7 @@ let todo = (state, action) => {
       return Object.assign({}, state, {completed: !state.completed});
 
     case 'EDITING_TODO':
-      if (state.id != action.id) {
-        return state;
-      }
-
-      return Object.assign({}, state, {editing: true});
+      return Object.assign({}, state, {editing: state.id == action.id});
 
     case 'CHANGE_TODO_TEXT':
       if (state.id != action.id) {
