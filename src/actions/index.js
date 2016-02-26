@@ -1,38 +1,16 @@
-let nextTodoId = 0;
+import {createAction} from 'redux-actions';
 
-export const addTodo = (text) => {
-  return {
-    type: 'ADD_TODO',
-    id: nextTodoId++,
-    text: text
-  };
-};
+let nextTodoId = 1;
 
-export const toggleTodo = (id) => {
-  return {
-    type: 'TOGGLE_TODO',
-    id: id
-  };
-};
+export const addTodo = createAction('ADD_TODO', text => ({
+  id: nextTodoId++,
+  text
+}));
 
-export const editingTodo = (id) => {
-  return {
-    type: 'EDITING_TODO',
-    id: id
-  };
-};
+export const toggleTodo = createAction('TOGGLE_TODO', b => b);
 
-export const setVisibility = (filter) => {
-  return {
-    type: 'SET_VISIBILITY',
-    filter: filter
-  };
-};
+export const editingTodo = createAction('EDITING_TODO', b => b)
 
-export const changeTodoText = (id, text) => {
-  return {
-    type: 'CHANGE_TODO_TEXT',
-    id: id,
-    text: text
-  }
-}
+export const setVisibility = createAction('SET_VISIBILITY', b => b);
+
+export const changeTodoText = createAction('CHANGE_TODO_TEXT', (id, text) => ({id, text}));
