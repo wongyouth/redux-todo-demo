@@ -7,7 +7,7 @@ const AddTodo = ({dispatch}) => {
 
   return (
     <div>
-      <input ref={node => input = node} onKeyDown={(e)=> {
+      <input ref={node => input = node} onKeyUp={(e)=> {
         if (e.keyCode === 13 && input.value != '') {
           dispatch(addTodo(input.value));
           input.value = '';
